@@ -1,9 +1,14 @@
-App Engine Java Guestbook
-Copyright (C) 2010-2012 Google Inc.
+This is an unoficial version of Google's Guestbook sample made with Spring MVC. My intention here is to provide a starting point for someone who wants to develop a new project on App Engine using Spring MVC.
+
+App Engine Java Guestbook with Spring MVC
+
+Uses AppEngine SDK 1.8.9
+Spring 4.0 (but works with Spring 3.X, just update the pom.xml)
+
 
 ## Sample guestbook for use with App Engine Java.
 
-Requires [Apache Maven](http://maven.apache.org) 3.0 or greater, and JDK 6+ in order to run.
+Requires [Apache Maven](http://maven.apache.org) 3.1 or greater, and JDK 7+ in order to run.
 
 To build, run
 
