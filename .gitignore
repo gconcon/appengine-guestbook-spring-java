@@ -17,3 +17,4 @@ temp-testng-customsuite.xml
 test-output
 .externalToolBuilders
 *~
+/.apt_generated
