@@ -6,8 +6,8 @@
 	<packaging>war</packaging>
 	<version>0.1-SNAPSHOT</version>
 
-	<groupId>denuncie-app</groupId>
-	<artifactId>denuncie-webapp</artifactId>
+	<groupId>com.guestbook</groupId>
+	<artifactId>guestbook-webapp</artifactId>
 
 	<pluginRepositories>
 		<pluginRepository>

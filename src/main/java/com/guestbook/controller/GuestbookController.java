@@ -1,4 +1,4 @@
-package br.com.denuncie;
+package com.guestbook.controller;
 
 import java.util.Date;
 
