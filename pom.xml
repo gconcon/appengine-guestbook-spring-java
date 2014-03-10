@@ -19,7 +19,7 @@
 
 	<properties>
 		<appengine.app.version>1</appengine.app.version>
-		<appengine.target.version>1.8.9</appengine.target.version>
+		<appengine.target.version>1.9.0</appengine.target.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.framework.version>4.0.0.RELEASE</spring.framework.version>
 	</properties>
