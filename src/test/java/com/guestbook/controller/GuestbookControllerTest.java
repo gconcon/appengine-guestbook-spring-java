@@ -62,7 +62,7 @@ public class GuestbookControllerTest {
 	}
 
 	@Test
-	public void testListingLoggedIn() throws Exception {
+	public void listingLoggedIn() throws Exception {
 		loginUser();
 
 		ModelAndView mav = mockMvc.perform(get("/loggedIn"))
@@ -72,7 +72,7 @@ public class GuestbookControllerTest {
 	}
 
 	@Test
-	public void testListingNotLoggedIn() throws Exception {
+	public void listingNotLoggedIn() throws Exception {
 		logoutUser();
 
 		// Moved to authentication service
@@ -81,7 +81,7 @@ public class GuestbookControllerTest {
 	}
 
 	@Test
-	public void testSignGuestbookLoggedIn() throws Exception {
+	public void signGuestbookLoggedIn() throws Exception {
 		loginUser();
 		signGuestbook();
 
@@ -99,7 +99,7 @@ public class GuestbookControllerTest {
 	}
 
 	@Test
-	public void testSignGuestbookLoggedOut() throws Exception {
+	public void signGuestbookLoggedOut() throws Exception {
 		logoutUser();
 		signGuestbook();
 
