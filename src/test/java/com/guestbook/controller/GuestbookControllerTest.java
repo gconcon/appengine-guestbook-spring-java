@@ -1,10 +1,12 @@
 package com.guestbook.controller;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -60,7 +62,7 @@ public class GuestbookControllerTest {
 	}
 
 	@Test
-	public void testListingLoggedIn() throws Exception {
+	public void listingLoggedIn() throws Exception {
 		loginUser();
 
 		ModelAndView mav = mockMvc.perform(get("/loggedIn"))
@@ -70,7 +72,7 @@ public class GuestbookControllerTest {
 	}
 
 	@Test
-	public void testListingNotLoggedIn() throws Exception {
+	public void listingNotLoggedIn() throws Exception {
 		logoutUser();
 
 		// Moved to authentication service
@@ -79,7 +81,7 @@ public class GuestbookControllerTest {
 	}
 
 	@Test
-	public void testSignGuestbookLoggedIn() throws Exception {
+	public void signGuestbookLoggedIn() throws Exception {
 		loginUser();
 		signGuestbook();
 
@@ -93,11 +95,11 @@ public class GuestbookControllerTest {
 								FilterOperator.EQUAL, new User(userEmail,
 										userDomain)))).asSingleEntity();
 
-		Assert.assertNotNull(entity);
+		assertThat(entity, is(notNullValue()));
 	}
 
 	@Test
-	public void testSignGuestbookLoggedOut() throws Exception {
+	public void signGuestbookLoggedOut() throws Exception {
 		logoutUser();
 		signGuestbook();
 
@@ -110,7 +112,7 @@ public class GuestbookControllerTest {
 						.setFilter(new FilterPredicate("user",
 								FilterOperator.EQUAL, null))).asSingleEntity();
 
-		Assert.assertNotNull(entity);
+		assertThat(entity, is(notNullValue()));
 	}
 
 	private void signGuestbook() throws Exception {
