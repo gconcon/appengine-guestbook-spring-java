@@ -1,10 +1,12 @@
 package com.guestbook.controller;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -93,7 +95,7 @@ public class GuestbookControllerTest {
 								FilterOperator.EQUAL, new User(userEmail,
 										userDomain)))).asSingleEntity();
 
-		Assert.assertNotNull(entity);
+		assertThat(entity, is(notNullValue()));
 	}
 
 	@Test
@@ -110,7 +112,7 @@ public class GuestbookControllerTest {
 						.setFilter(new FilterPredicate("user",
 								FilterOperator.EQUAL, null))).asSingleEntity();
 
-		Assert.assertNotNull(entity);
+		assertThat(entity, is(notNullValue()));
 	}
 
 	private void signGuestbook() throws Exception {
