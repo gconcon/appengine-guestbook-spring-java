@@ -23,7 +23,7 @@ public class GuestbookController {
 	public String home() {
 		return "guestbook";
 	}
-	
+
 	@RequestMapping("/loggedIn")
 	public ModelAndView listGuestbook() {
 		UserService userService = UserServiceFactory.getUserService();
